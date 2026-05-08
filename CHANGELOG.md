@@ -7,7 +7,7 @@ This page shows a detailed overview of the changes between versions without the 
 	## **WORK IN PROGRESS**
 -->
 
-## **WORK IN PROGRESS**
+## 0.6.8 (2026-05-08)
 
 - Fix: Fixes setting ACLs (really)
 
