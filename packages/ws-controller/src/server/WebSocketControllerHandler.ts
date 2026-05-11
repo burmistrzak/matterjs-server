@@ -470,6 +470,12 @@ export class WebSocketControllerHandler implements WebServerHandler {
                 case "set_thread_dataset":
                     result = await this.#handleSetThreadDataset(args);
                     break;
+                case "remove_wifi_credentials":
+                    result = await this.#handleRemoveWifiCredentials();
+                    break;
+                case "remove_thread_dataset":
+                    result = await this.#handleRemoveThreadDataset();
+                    break;
                 case "get_thread_border_routers":
                     result = this.#controller.borderRouters.list();
                     break;
@@ -920,6 +926,26 @@ export class WebSocketControllerHandler implements WebServerHandler {
         }
         await this.#config.set({ threadDataset: dataset });
         // Broadcast server_info_updated event to notify clients of credential change
+        try {
+            await this.#broadcastServerInfoUpdated();
+        } catch (error) {
+            logger.warn("Failed to broadcast server info update", error);
+        }
+        return {};
+    }
+
+    async #handleRemoveWifiCredentials(): Promise<ResponseOf<"remove_wifi_credentials">> {
+        await this.#config.removeWifiCredentials();
+        try {
+            await this.#broadcastServerInfoUpdated();
+        } catch (error) {
+            logger.warn("Failed to broadcast server info update", error);
+        }
+        return {};
+    }
+
+    async #handleRemoveThreadDataset(): Promise<ResponseOf<"remove_thread_dataset">> {
+        await this.#config.removeThreadDataset();
         try {
             await this.#broadcastServerInfoUpdated();
         } catch (error) {
