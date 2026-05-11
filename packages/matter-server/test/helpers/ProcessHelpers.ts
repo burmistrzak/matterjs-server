@@ -72,6 +72,7 @@ export function startServer(
         `--storage-path=${storagePath}`,
         `--log-level=${logLevel}`,
         `--port=${SERVER_PORT}`,
+        "--enable-test-net-dcl",
     ];
     if (logFilePath !== undefined) {
         args.push(`--log-file=${logFilePath}`);
