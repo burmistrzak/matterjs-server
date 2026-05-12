@@ -222,6 +222,11 @@ export class MatterController {
             );
 
             this.#commandHandler.events.started.once(async () => {
+                this.#controllerInstance!.node.behaviors.require(DclBehavior);
+                await this.#controllerInstance!.node.setStateOf(DclBehavior, {
+                    fetchTestCertificates: this.#enableTestNetDcl,
+                });
+
                 const initPromises = new Array<Promise<unknown>>();
 
                 if (this.#legacyCommissionedDates !== undefined) {
