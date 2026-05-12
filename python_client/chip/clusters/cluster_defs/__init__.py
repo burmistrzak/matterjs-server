@@ -113,6 +113,7 @@ from .SoftwareDiagnostics import SoftwareDiagnostics
 from .SoilMeasurement import SoilMeasurement
 from .Switch import Switch
 from .TargetNavigator import TargetNavigator
+from .TclDehumidifierCluster import TclDehumidifierCluster
 from .TemperatureControl import TemperatureControl
 from .TemperatureMeasurement import TemperatureMeasurement
 from .Thermostat import Thermostat
@@ -255,6 +256,7 @@ __all__ = [
     "SoilMeasurement",
     "Switch",
     "TargetNavigator",
+    "TclDehumidifierCluster",
     "TemperatureControl",
     "TemperatureMeasurement",
     "Thermostat",

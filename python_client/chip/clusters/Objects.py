@@ -145,6 +145,7 @@ __all__ = [
     "SoilMeasurement",
     "Switch",
     "TargetNavigator",
+    "TclDehumidifierCluster",
     "TemperatureControl",
     "TemperatureMeasurement",
     "Thermostat",
