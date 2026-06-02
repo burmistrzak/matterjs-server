@@ -17,6 +17,7 @@ This page shows a detailed overview of the changes between versions without the 
 - Enhancement: Dashboard header shows a Home button in node/endpoint/cluster views for one-click return to the main dashboard
 - Enhancement: Allows finding a node in the thread network chart by its node label in addition to the extended address and Node-ID
 - Enhancement: Optimize the error message when commissioning a device with a test/dev certificate but without the "Test Net DCL" configuration enabled
+- Enhancement: BLE proxy endpoint now accepts multiple parallel WebSocket clients (each peripheral handled by the proxy that first discovered it), so several BLE radios can extend coverage
 - Enhancement: Update matter.js to the latest 0.17.1-nightly
     - Removed invalid FabricIndex field requirements for some command types and models
     - Standardized log levels and logged messages
