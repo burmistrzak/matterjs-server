@@ -144,16 +144,15 @@ For Certificates, Certification verifications, and vendor lookup the server uses
 
 The dashboard includes interactive network topology graphs for Thread and WiFi networks, accessible via the navigation tabs. These graphs are only available on screens wider than 768px and are hidden on mobile devices.
 
+For an end-user legend explaining the visual encodings — line styles, arrow direction, role badges, signal colors, and the "Bidir" / "one-way" / "reverse" terms — see [Network Visualization in the dashboard README](packages/dashboard/README.md#network-visualization).
+
 ### Thread Network Graph
 
 Displays the Thread mesh network topology showing how your Thread devices connect to each other. The graph visualizes:
 
 - **Device nodes** with icons based on device type (lights, sensors, plugs, etc.)
-- **Mesh connections** between Thread devices with signal strength indicated by color:
-    - Green: Strong signal (> -70 dBm)
-    - Orange: Medium signal (-85 to -70 dBm)
-    - Red: Weak signal (< -85 dBm)
-- **Thread roles**: Leader, Router, End Device, Sleepy End Device
+- **Mesh connections** between Thread devices, with line style, color, and arrows encoding link state and signal strength (see the legend linked above)
+- **Thread roles**: Leader, Router, End Device, Sleepy End Device — shown as corner badges (see the legend linked above)
 - **Border Routers**: External devices identified via mDNS (`_meshcop._udp` + `_trel._udp`) are rendered with a router icon and a two-line label showing the device hostname and the Thread network name. Click a Border Router node to see its full mDNS-derived details — vendor, model, Thread version, hostname, IP addresses, MeshCoP/TREL ports, extended PAN ID, partition ID, active timestamp, state bitmap, border-agent ID, and which commissioned nodes report it as a neighbor.
 - **Unknown / External devices**: Thread routers that appear in commissioned-node neighbor tables but cannot be matched to a known Border Router are shown with a question-mark icon and dashed edges. When their Thread network can be resolved (because at least one Border Router on the same extended PAN ID is known via mDNS), the network name is shown as a second line on the label and in the details panel.
 
